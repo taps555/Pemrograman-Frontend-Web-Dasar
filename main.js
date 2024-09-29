@@ -6,25 +6,30 @@ function process_argv() {
 }
 
 function krsApplication(name, programId, gpa) {
-    let totalKRS = 0
+    let totalKRS = ``
     // let programStudi = [`ACC` , `HIN`, `IAB`, `IAP`, `MJN`, `TKM`]
 
-    if (gpa > 4 || gpa < 0){
+    if (gpa > `4` || gpa < `0`){
         return `Invalid gpa number`
-    } else if (gpa > 2.99 ) {
-        totalKRS = 24;
+    } 
+    if (gpa > `2.99` ) {
+        totalKRS = `24`;
         return `Hallo ${name}, berdasarkan IP semester lalu sebesar ${gpa}, kamu dapat mengambil SKS sebanyak ${totalKRS} SKS untuk semester depan.`
-    } else if (gpa >= 2.5 || gpa <= 2.99 ) {
-        totalKRS = 21
+    }
+    if (gpa >= `2.5`) {
+        totalKRS = `21`
         return `Hallo ${name}, berdasarkan IP semester lalu sebesar ${gpa}, kamu diwajibkan melakukan bimbingan dengan dosen pembimbing pada prodi ${programId} dan hanya dapat mengambil SKS sebanyak ${totalKRS} SKS untuk semester depan.`
-    } else if (gpa >= 2 || gpa <= 2.49) {
-        totalKRS = 18
+    }
+    if (gpa >= `2`) {
+        totalKRS = `18`
         return `Hallo ${name}, berdasarkan IP semester lalu sebesar ${gpa}, kamu diwajibkan melakukan bimbingan dengan dosen pembimbing pada prodi ${programId} dan hanya dapat mengambil SKS sebanyak ${totalKRS} SKS untuk semester depan.`
-    } else if (gpa >= 1.5 || gpa <= 1.99) {
-        totalKRS = 15
+    }
+    if (gpa >= `1.5`) {
+        totalKRS = `15`
         return `Hallo ${name}, berdasarkan IP semester lalu sebesar ${gpa}, kamu diwajibkan melakukan bimbingan dengan dosen pembimbing pada prodi ${programId} dan hanya dapat mengambil SKS sebanyak ${totalKRS} SKS untuk semester depan.`
-    } else if (gpa >= 0 || gpa <= 1.49) {
-        totalKRS = 12
+    }
+    if (gpa >= `0` || gpa <= `1.49`) {
+        totalKRS = `12`
         return `Hallo ${name}, berdasarkan IP semester lalu sebesar ${gpa}, kamu diwajibkan melakukan bimbingan dengan dosen pembimbing pada prodi ${programId} dan hanya dapat mengambil SKS sebanyak ${totalKRS} SKS untuk semester depan.`
     } 
 
