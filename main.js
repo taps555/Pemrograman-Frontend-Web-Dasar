@@ -6,7 +6,7 @@ function process_argv() {
 }
 
 function krsApplication(name, programId, gpa) {
-    let totalKRS = '';
+    let totalKRS = ``
     let programStudy = '';
 
     switch (programId) {
@@ -32,34 +32,37 @@ function krsApplication(name, programId, gpa) {
             return 'Prodi tidak ditemukan';
     }
 
-    if (gpa > 4 || gpa < 0) {
-        return 'Invalid gpa number';
-    }
+    programId = programStudy
 
-    if (gpa > 2.99) {
-        totalKRS = 24;
-        message = `Hallo ${name}, berdasarkan IP semester lalu sebesar ${gpa}, kamu dapat mengambil SKS sebanyak ${totalKRS} SKS untuk semester depan.`;
-    } else if (gpa >= 2.5) {
-        totalKRS = 21;
-        message = `Hallo ${name}, berdasarkan IP semester lalu sebesar ${gpa}, kamu diwajibkan melakukan bimbingan dengan dosen pembimbing pada prodi ${programStudy} dan hanya dapat mengambil SKS sebanyak ${totalKRS} SKS untuk semester depan.`;
-    } else if (gpa >= 2) {
-        totalKRS = 18;
-        message = `Hallo ${name}, berdasarkan IP semester lalu sebesar ${gpa}, kamu diwajibkan melakukan bimbingan dengan dosen pembimbing pada prodi ${programStudy} dan hanya dapat mengambil SKS sebanyak ${totalKRS} SKS untuk semester depan.`;
-    } else if (gpa >= 1.5) {
-        totalKRS = 15;
-        message = `Hallo ${name}, berdasarkan IP semester lalu sebesar ${gpa}, kamu diwajibkan melakukan bimbingan dengan dosen pembimbing pada prodi ${programStudy} dan hanya dapat mengambil SKS sebanyak ${totalKRS} SKS untuk semester depan.`;
-    } else if (gpa >= 0) {
-        totalKRS = 12;
-        message = `Hallo ${name}, berdasarkan IP semester lalu sebesar ${gpa}, kamu diwajibkan melakukan bimbingan dengan dosen pembimbing pada prodi ${programStudy} dan hanya dapat mengambil SKS sebanyak ${totalKRS} SKS untuk semester depan.`;
-    }
+    if (gpa > `4` || gpa < `0`){
+        return `Invalid gpa number`
+    } 
 
-    return message;
+    if (gpa > `2.99` ) {
+        totalKRS = `24`;
+        return `Hallo ${name}, berdasarkan IP semester lalu sebesar ${gpa}, kamu dapat mengambil SKS sebanyak ${totalKRS} SKS untuk semester depan.`
+    }else if (gpa >= `2.5`) {
+        totalKRS = `21`
+        return `Hallo ${name}, berdasarkan IP semester lalu sebesar ${gpa}, kamu diwajibkan melakukan bimbingan dengan dosen pembimbing pada prodi ${programId} dan hanya dapat mengambil SKS sebanyak ${totalKRS} SKS untuk semester depan.`
+    }else if (gpa >= `2`) {
+        totalKRS = `18`
+        return `Hallo ${name}, berdasarkan IP semester lalu sebesar ${gpa}, kamu diwajibkan melakukan bimbingan dengan dosen pembimbing pada prodi ${programId} dan hanya dapat mengambil SKS sebanyak ${totalKRS} SKS untuk semester depan.`
+    }else if (gpa >= `1.5`) {
+        totalKRS = `15`
+        prgoramstude = `TKM`
+        return `Hallo ${name}, berdasarkan IP semester lalu sebesar ${gpa}, kamu diwajibkan melakukan bimbingan dengan dosen pembimbing pada prodi ${programId} dan hanya dapat mengambil SKS sebanyak ${totalKRS} SKS untuk semester depan.`
+    }else if (gpa >= `0` || gpa <= `1.49`) {
+        totalKRS = `12`
+        return `Hallo ${name}, berdasarkan IP semester lalu sebesar ${gpa}, kamu diwajibkan melakukan bimbingan dengan dosen pembimbing pada prodi ${programId} dan hanya dapat mengambil SKS sebanyak ${totalKRS} SKS untuk semester depan.`
+    } 
+
+    
 }
 
-// Dilarang menghapus/mengganti kode di bawah ini!!!
+
+// Dilarang menghapus/mangganti code dibawah ini!!!
 if (process.env.NODE_ENV !== "test") {
-    console.log(process.argv());
+    console.log(process_argv());
 }
 
 module.exports = krsApplication;
-
