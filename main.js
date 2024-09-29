@@ -8,9 +8,7 @@ function process_argv() {
 function krsApplication(name, programId, gpa) {
     let totalKRS = '';
     let programStudy = '';
-    let message = '';
 
-    // Mendapatkan nama prodi berdasarkan programId
     switch (programId) {
         case 'ACC':
             programStudy = 'Akuntansi';
